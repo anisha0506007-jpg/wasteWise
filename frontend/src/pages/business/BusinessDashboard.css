@@ -1,0 +1,128 @@
+/* =========================================================
+   Business dashboard page layout (mobile-first)
+   ========================================================= */
+
+.bd {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ---------- Welcome ---------- */
+.bd-welcome {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, #f1fbf5 100%);
+  border: 1px solid #c3e6d1;
+  border-radius: var(--radius-lg);
+}
+
+.bd-welcome__title {
+  font-size: clamp(1.5rem, 1.2rem + 1.3vw, 2.1rem);
+  color: var(--color-primary-dark);
+}
+
+.bd-welcome__text {
+  margin-bottom: 0.4rem;
+  color: var(--color-text);
+}
+
+.bd-welcome__date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+}
+
+.bd-welcome__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.bd-spin {
+  animation: bd-spin 0.8s linear infinite;
+}
+
+@keyframes bd-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Statistics: 1 column -> 2 -> 3 ---------- */
+.bd-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+/* ---------- Charts ---------- */
+.bd-charts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+/* ---------- Alerts + activity ---------- */
+.bd-bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 520px) {
+  .bd-welcome__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 640px) {
+  .bd-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .bd-welcome {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-xl);
+  }
+
+  .bd-charts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bd-charts__monthly {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1100px) {
+  .bd-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .bd-bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1400px) {
+  .bd-charts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .bd-charts__monthly {
+    grid-column: auto;
+  }
+}

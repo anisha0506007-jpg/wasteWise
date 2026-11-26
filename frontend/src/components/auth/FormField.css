@@ -1,0 +1,96 @@
+/* =========================================================
+   Form field
+   (.form-group, .form-label, .form-hint, .form-error live in global.css)
+   ========================================================= */
+
+.field__control {
+  display: flex;
+  align-items: center;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.field__control:hover {
+  border-color: #cfdad2;
+}
+
+.field__control:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(23, 107, 77, 0.12);
+}
+
+.field__control--error,
+.field__control--error:hover {
+  border-color: var(--color-error);
+}
+
+.field__control--error:focus-within {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.12);
+}
+
+.field__icon {
+  display: inline-flex;
+  padding-left: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.field__input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+}
+
+.field__icon + .field__input {
+  padding-left: 0.65rem;
+}
+
+/* The wrapper already shows the focus ring */
+.field__input:focus,
+.field__input:focus-visible {
+  outline: none;
+}
+
+.field__input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+
+textarea.field__input {
+  min-height: 84px;
+  resize: vertical;
+}
+
+select.field__input {
+  cursor: pointer;
+}
+
+.field__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: 0.15rem;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-md);
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.field__toggle:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.form-required {
+  margin-left: 3px;
+  color: var(--color-error);
+}

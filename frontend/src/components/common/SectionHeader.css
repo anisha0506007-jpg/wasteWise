@@ -1,0 +1,49 @@
+.section-header {
+  max-width: 680px;
+  margin-bottom: var(--space-xl);
+}
+
+.section-header--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.section-header--left {
+  text-align: left;
+}
+
+.section-header__eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-md);
+  padding: 0.3rem 0.9rem;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.section-header__title {
+  margin-bottom: var(--space-md);
+}
+
+.section-header__description {
+  font-size: var(--font-size-md);
+}
+
+/* ---------- Light version (dark backgrounds) ---------- */
+.section-header--light .section-header__eyebrow {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--color-accent);
+}
+
+.section-header--light .section-header__title {
+  color: var(--color-white);
+}
+
+.section-header--light .section-header__description {
+  color: rgba(255, 255, 255, 0.78);
+}

@@ -1,0 +1,5 @@
+
+.landing {
+  background: var(--color-background);
+  overflow-x: clip;
+}

@@ -1,0 +1,118 @@
+/* =========================================================
+   Impact Stats
+   ========================================================= */
+
+.impact {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary) 100%
+  );
+}
+
+.impact__shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.impact__shape--one {
+  top: -140px;
+  right: -100px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(244, 163, 64, 0.25), transparent 70%);
+}
+
+.impact__shape--two {
+  bottom: -160px;
+  left: -120px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(221, 245, 232, 0.16), transparent 70%);
+}
+
+.impact__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.impact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.impact__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: background-color var(--transition-slow), transform var(--transition-slow);
+}
+
+.impact__card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.impact__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: var(--space-md);
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  border-radius: 50%;
+}
+
+.impact__value {
+  font-size: clamp(2rem, 1.5rem + 2vw, 2.75rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  color: var(--color-white);
+}
+
+.impact__label {
+  margin-top: 0.4rem;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.impact__note {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: var(--space-xl);
+  font-size: var(--font-size-sm);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.impact__note svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+@media (min-width: 560px) {
+  .impact__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .impact__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+  }
+}

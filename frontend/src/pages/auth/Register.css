@@ -1,0 +1,52 @@
+/* =========================================================
+   Register page
+   ========================================================= */
+
+.register__section {
+  margin: var(--space-sm) 0 var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+/* One column on mobile, two columns from tablet up */
+.register__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: var(--space-md);
+}
+
+.register__role-fields {
+  animation: register-fade-in 0.35s ease;
+}
+
+.register-form-last {
+  margin-bottom: var(--space-md);
+}
+
+.auth-form .btn {
+  margin-top: var(--space-md);
+}
+
+@media (min-width: 600px) {
+  .register__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .register__full {
+    grid-column: 1 / -1;
+  }
+}
+
+@keyframes register-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

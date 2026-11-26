@@ -1,0 +1,70 @@
+.activity-list__skeletons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.activity-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Vertical timeline line */
+.activity-list::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 1.05rem;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.activity-list__item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.activity-list__icon {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border: 3px solid var(--color-white);
+  border-radius: 50%;
+}
+
+.activity-list__icon--request_received {
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+}
+
+.activity-list__icon--request_rejected {
+  background: var(--color-error-light);
+  color: var(--color-error);
+}
+
+.activity-list__icon--product_collected {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.activity-list__text p {
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.activity-list__text time {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}

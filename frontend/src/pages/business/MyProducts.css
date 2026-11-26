@@ -1,0 +1,44 @@
+.myp {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.myp__count {
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.myp__content {
+  transition: opacity var(--transition);
+}
+
+/* Slightly faded while new results load, so the page does not jump */
+.myp__content--updating {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.myp__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 640px) {
+  .myp__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1400px) {
+  .myp__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1399px) {
+  .myp__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

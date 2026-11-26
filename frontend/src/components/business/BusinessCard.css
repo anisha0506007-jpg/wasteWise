@@ -1,0 +1,161 @@
+/* =========================================================
+   Business card + shared list rows
+   ========================================================= */
+
+.bz-card {
+  min-width: 0;
+  padding: var(--space-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.bz-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.bz-card__title {
+  font-size: var(--font-size-md);
+}
+
+.bz-card__subtitle {
+  font-size: var(--font-size-sm);
+}
+
+/* ---------- List rows (mobile-first: stacked) ---------- */
+.bz-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.bz-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.6rem 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bz-row:first-child {
+  padding-top: 0;
+}
+
+.bz-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.bz-row__main {
+  min-width: 0;
+}
+
+.bz-row__name {
+  overflow: hidden;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bz-row__sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.bz-row__details {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem 1rem;
+}
+
+.bz-row__end {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.bz-cell__label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+}
+
+.bz-cell__value {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.bz-cell__hint {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.bz-link {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+.bz-link:hover {
+  text-decoration: underline;
+}
+
+/* Thumbnails and avatars */
+.bz-thumb,
+.bz-avatar {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  overflow: hidden;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.bz-thumb {
+  border-radius: var(--radius-md);
+}
+
+.bz-avatar {
+  border-radius: 50%;
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ---------- Wide layout: one line per row (opt-in with .bz-row--wide) ---------- */
+@media (min-width: 900px) {
+  .bz-card {
+    padding: var(--space-lg);
+  }
+
+  .bz-row--wide {
+    grid-template-columns: auto minmax(0, 1.3fr) minmax(0, 1.7fr) auto;
+  }
+
+  .bz-row--wide .bz-row__details,
+  .bz-row--wide .bz-row__end {
+    grid-column: auto;
+  }
+
+  .bz-row--wide .bz-row__end {
+    justify-content: flex-end;
+    gap: 1.25rem;
+  }
+}

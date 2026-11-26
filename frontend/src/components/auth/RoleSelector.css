@@ -1,0 +1,94 @@
+/* =========================================================
+   Role selector cards
+   ========================================================= */
+
+.role-selector {
+  min-width: 0;
+  margin: 0 0 var(--space-lg);
+  padding: 0;
+  border: 0;
+}
+
+.role-selector .form-label {
+  margin-bottom: var(--space-sm);
+  padding: 0;
+}
+
+.role-selector__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+.role-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: var(--space-md);
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color var(--transition), background-color var(--transition),
+    box-shadow var(--transition), transform var(--transition);
+}
+
+.role-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.role-card--selected {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(23, 107, 77, 0.15);
+}
+
+/* Hidden visually but still usable with the keyboard */
+.role-card__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.role-card:has(.role-card__input:focus-visible) {
+  outline: 3px solid rgba(244, 163, 64, 0.6);
+  outline-offset: 2px;
+}
+
+.role-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.25rem;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: 12px;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.role-card--selected .role-card__icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.role-card__title {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.role-card__text {
+  font-size: var(--font-size-xs);
+  line-height: 1.45;
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 600px) {
+  .role-selector__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

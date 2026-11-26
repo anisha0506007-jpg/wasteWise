@@ -1,0 +1,125 @@
+ .pfilters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.pfilters__search {
+  position: relative;
+}
+
+.pfilters__search svg {
+  position: absolute;
+  top: 50%;
+  left: 0.9rem;
+  color: var(--color-text-secondary);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.pfilters input,
+.pfilters select {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.6rem 1rem;
+  background: var(--color-background);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.pfilters__search input {
+  padding-left: 2.6rem;
+}
+
+.pfilters select {
+  cursor: pointer;
+}
+
+.pfilters input:focus,
+.pfilters select:focus {
+  outline: none;
+  background: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(23, 107, 77, 0.12);
+}
+
+.pfilters__end {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.pfilters__clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.9rem;
+  color: var(--color-error);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.pfilters__clear:hover {
+  background: var(--color-error-light);
+}
+
+.pfilters__views {
+  display: inline-flex;
+  margin-left: auto;
+  overflow: hidden;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.pfilters__views button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.5rem;
+  color: var(--color-text-secondary);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.pfilters__views button:hover {
+  background: var(--color-primary-light);
+}
+
+.pfilters__views .is-active {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+@media (min-width: 700px) {
+  .pfilters {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pfilters__search {
+    grid-column: 1 / -1;
+  }
+
+  .pfilters__end {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1100px) {
+  .pfilters {
+    grid-template-columns: minmax(220px, 1.6fr) repeat(3, minmax(140px, 1fr)) auto;
+  }
+
+  .pfilters__search,
+  .pfilters__end {
+    grid-column: auto;
+  }
+}

@@ -1,0 +1,106 @@
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.faq {
+  padding: var(--space-2xl) 0;
+  background: var(--color-white);
+}
+
+.faq__inner {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.faq__item {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition), box-shadow var(--transition),
+    background-color var(--transition);
+}
+
+.faq__item:hover {
+  border-color: #cfdad2;
+}
+
+.faq__item--open {
+  background: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.faq__heading {
+  margin: 0;
+  font-size: inherit;
+}
+
+.faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  width: 100%;
+  padding: 1.1rem 1.25rem;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  text-align: left;
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+}
+
+.faq__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: 50%;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.faq__item--open .faq__icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ---------- Smooth open/close using grid rows ---------- */
+.faq__answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows 0.3s ease, visibility 0.3s;
+}
+
+.faq__item--open .faq__answer {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+
+.faq__answer-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.faq__answer-text {
+  padding: 0 1.25rem 1.25rem;
+  font-size: var(--font-size-sm);
+  line-height: 1.75;
+}
+
+@media (min-width: 900px) {
+  .faq__inner {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: var(--space-2xl);
+  }
+}

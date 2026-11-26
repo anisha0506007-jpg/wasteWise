@@ -1,0 +1,64 @@
+/* =========================================================
+   Loader
+   ========================================================= */
+
+.loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-primary);
+}
+
+.loader__spinner {
+  display: inline-block;
+  width: var(--loader-size, 32px);
+  height: var(--loader-size, 32px);
+  border: var(--loader-border, 3px) solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: loader-spin 0.7s linear infinite;
+}
+
+.loader__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+/* ---------- Sizes ---------- */
+.loader--sm {
+  --loader-size: 16px;
+  --loader-border: 2px;
+}
+
+.loader--md {
+  --loader-size: 32px;
+  --loader-border: 3px;
+}
+
+.loader--lg {
+  --loader-size: 48px;
+  --loader-border: 4px;
+}
+
+/* Inside a button the spinner takes the button's text color */
+.btn .loader {
+  color: inherit;
+}
+
+/* ---------- Full screen ---------- */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(248, 250, 247, 0.85);
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

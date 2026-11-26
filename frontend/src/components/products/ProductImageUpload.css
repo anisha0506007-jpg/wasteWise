@@ -1,0 +1,69 @@
+.piu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.piu__preview {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-primary-light);
+  border: 2px dashed #b5d9c4;
+  border-radius: var(--radius-lg);
+}
+
+.piu__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.piu__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+  height: 100%;
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+}
+
+.piu__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.piu__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.1rem;
+  background: var(--color-white);
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  transition: background-color var(--transition);
+}
+
+.piu__button:hover {
+  background: var(--color-primary-light);
+}
+
+.piu__button--remove {
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+.piu__button--remove:hover {
+  background: var(--color-error-light);
+}

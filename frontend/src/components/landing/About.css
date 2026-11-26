@@ -1,0 +1,110 @@
+/* =========================================================
+   About
+   ========================================================= */
+
+.about {
+  padding: var(--space-2xl) 0;
+  background: var(--color-background);
+}
+
+.about__inner {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.about__media {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.about__image {
+  aspect-ratio: 4 / 3.4;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about__badge {
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 270px;
+  padding: 0.85rem 1.1rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.about__badge-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  border-radius: 12px;
+}
+
+.about__badge-title {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.about__badge-text {
+  display: block;
+  font-size: var(--font-size-xs);
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+}
+
+.about__text {
+  margin-bottom: var(--space-lg);
+  line-height: 1.8;
+}
+
+.about__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: var(--space-xl);
+}
+
+.about__list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.about__check {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.1rem;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 50%;
+}
+
+@media (min-width: 900px) {
+  .about__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .about__badge {
+    right: -1.5rem;
+  }
+}

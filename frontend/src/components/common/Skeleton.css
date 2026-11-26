@@ -1,0 +1,49 @@
+.skeleton {
+  display: block;
+  background: linear-gradient(100deg, #eef3ef 30%, #f8fbf9 50%, #eef3ef 70%);
+  background-size: 200% 100%;
+  border-radius: var(--radius-sm);
+  animation: skeleton-shimmer 1.4s linear infinite;
+}
+
+.skeleton--text {
+  height: 0.9rem;
+  width: 100%;
+}
+
+.skeleton--short {
+  height: 0.9rem;
+  width: 45%;
+}
+
+.skeleton--title {
+  height: 1.6rem;
+  width: 60%;
+}
+
+.skeleton--row {
+  height: 3.75rem;
+  border-radius: var(--radius-md);
+}
+
+.skeleton--card {
+  height: 8.5rem;
+  border-radius: var(--radius-lg);
+}
+
+.skeleton--chart {
+  height: 260px;
+  border-radius: var(--radius-md);
+}
+
+.skeleton--circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+@keyframes skeleton-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}

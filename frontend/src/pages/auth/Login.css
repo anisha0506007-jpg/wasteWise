@@ -1,0 +1,43 @@
+/* =========================================================
+   Login page
+   ========================================================= */
+
+.login__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.login__remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.login__remember input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.login__forgot {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+.login__forgot:hover {
+  text-decoration: underline;
+}
+
+.login__hint {
+  margin-bottom: var(--space-lg);
+  font-size: var(--font-size-xs);
+}

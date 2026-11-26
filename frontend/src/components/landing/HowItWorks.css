@@ -1,0 +1,97 @@
+/* =========================================================
+   How It Works
+   ========================================================= */
+
+.how {
+  padding: var(--space-2xl) 0;
+  background: var(--color-background);
+}
+
+.how__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.how__item {
+  position: relative;
+  z-index: 1;
+}
+
+.how__card {
+  position: relative;
+  height: 100%;
+  padding: var(--space-xl) var(--space-lg) var(--space-lg);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.how__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.how__number {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-lg);
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  color: var(--color-primary-light);
+}
+
+.how__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: var(--space-lg);
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 18px;
+  box-shadow: 0 8px 18px rgba(23, 107, 77, 0.28);
+}
+
+.how__step {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-dark);
+}
+
+.how__title {
+  margin-bottom: 0.5rem;
+  font-size: var(--font-size-lg);
+}
+
+.how__text {
+  font-size: var(--font-size-sm);
+  line-height: 1.7;
+}
+
+/* ---------- Desktop: three columns with a dashed connector ---------- */
+@media (min-width: 900px) {
+  .how__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .how__grid::before {
+    content: '';
+    position: absolute;
+    top: 4.5rem;
+    left: 15%;
+    right: 15%;
+    z-index: 0;
+    border-top: 2px dashed #c3d6c9;
+  }
+}

@@ -1,0 +1,74 @@
+.expiry-alerts__skeleton {
+  margin-bottom: var(--space-sm);
+}
+
+.expiry-alerts__summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.expiry-alerts__chip {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.expiry-alerts__chip--red {
+  background: var(--color-error-light);
+  color: #912d22;
+}
+
+.expiry-alerts__chip--solid {
+  background: var(--color-accent);
+  color: var(--color-text);
+}
+
+.expiry-alerts__chip--orange {
+  background: var(--color-accent-light);
+  color: #8a5a12;
+}
+
+.expiry-alerts__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+}
+
+.expiry-alerts__icon--expired {
+  background: var(--color-error-light);
+  color: var(--color-error);
+}
+
+.expiry-alerts__icon--expires_today {
+  background: var(--color-accent);
+  color: var(--color-text);
+}
+
+.expiry-alerts__icon--expiring_soon {
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+}
+
+.expiry-alerts__blocked {
+  display: inline-flex;
+  align-items: center;
+  align-self: end;
+  gap: 0.35rem;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-error);
+}
+
+.expiry-alerts__more {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: var(--space-md);
+  font-size: var(--font-size-xs);
+}
